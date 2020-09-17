@@ -1,0 +1,69 @@
+﻿1. State the major functions of the physical layer.(7%) the major functions of the 
+   data link layer.(8%)
+ans:(1) The PL is concerned with transmitting raw bits over a communication channel. 
+        The design issues have to do with making sure that one side sends a 1 bit, 
+        it is received by the other side as a 1 bit, not as a 0 bit.
+    (2) The DLL is to take a raw transmission facility and transform it into a line 
+        and appears the error-free results to NL. It accomplishes the task by having
+        the sender break the input data up into data frames,transmit the frames 
+        sequentially and process the Ack frames sent back by the receiver.
+
+2. Why has the PCM sampling time been set at 125 micro seconds?(7%)
+ans: By Nyquist's Theorem:
+     maximum data rate = 2Hlog V (bits/s)
+                       = 2*(4KHz)*log 2
+                       = 8000 (samples/s)
+     Thus, the PCM sampling time = 1/8000 (s) = 125 (μs)
+
+3. State two reasons why the Manchester encoding scheme is used in the Ethernet.(8%)
+ans:a. Synchronization
+    b. Error detection
+    c. No dc component
+
+4. Why the CRC error check is used in most communication systems?(5%) With the generator 
+   polynomial x+1, what is the CRC code for the message x+x+1?(10%) Give one example of
+   damaged frame that is not detected by the CRC check.(5%)
+ans:(1) a. Easy hardware implement 
+        b. Detection of burst errors
+   (2) CRC code = 10100001111
+   (3)transmitted frame = T
+      received frame = Tr
+      error pattern = E
+      If E is divisible by the generator, then Tr is a damaged frame and isn't detected 
+      by CRC check.
+
+5. State the main difference of the go-back-n ARQ and the selective-repeat ARQ.(7%) 
+   Give one situation that is more suitable to use each of the above two ARQs.(8%)
+ans (a) Go-back-n ARQ: Receiver discards all subsequent frames of a damaged frame,
+     sending no ack's for the discard frames and retransmit all discarded frames.
+     Selective-Repeat ARQ: Receiver stores all the correct frames following the
+     bad one.Sender retransmits only the bad frame, not all its successors.
+    (b) go-back-n ARQ適用於傳送端的buffer夠大，傳送環境的bandwidth也夠大的環境之下,而
+        selective-repeat ARQ則較適用於傳送端的buffer不太多，bandwidth亦不太大的環境。
+
+6. What is the optimal window size of a sliding window protocol.(5%) A 3000-km long T1 
+   trunk is used to transmit 64-byte frames using go-back-n protocol. If the propagation
+   speed is 6 micro second/km, how many bits should the sequence numbers be in a frame?
+ans  (a) 2^n-1
+     (b) Tframe  = 64*8*106 / 1.544*220 = 316.244 μsec
+         Tpop   =3000*2*6 = 36000 μsec
+         Tframe / Tpop = 113.8
+         所以需要7個 bits來解決sequence number的問題
+
+7. Explain why 1-persistent CSMA is used in Ethernet.(8%) Why there is the LCFS(Last 
+   Come First Serve) phenomenon in the CSMA/CD protocol?(7%)
+ans:Ⅰ.因為1-persistence CSMA可以監聽網路的使用狀況，若無人使用則立即傳送資料，如此可
+       以避免不必要的資源浪費，而且不會像non-persistence或p-persistence般傳送前需先等
+       待一段random time。且在low load情況下有較高的throughput。
+    Ⅱ.因為CSMA/CD具備網路監聽與衝撞偵測的功能，因此一旦發衝撞發生後即放棄繼續傳送，
+       並採取binary exponential back-off演算法以減少下一次衝撞發生的機率。也因為此演
+       算法而使得LCFS的情形發生，因為一旦衝撞發生，所有偵測到該衝撞的station即開始進
+       行binary exponential back-off演算法，而此刻衝撞已經消失並剛好有一個station要
+       傳送資料，於是此station在無衝撞的情形下便可進行其傳送工作，而這正是LCFS。
+
+8. Consider the delay of pure ALOHA versus slotted ALOHA at low load. Which one is 
+   less? Explain your answer.(10%)
+ans:在low load的情況之下，pure ALOHA有較小的delay。因為pure ALOHA可以在任何時間提出
+    request，由於是在low load的情況下，所以發生collision的機率不高，相對的取得資源的
+    機會較多因而使得delay不大。而slotted ALOHA則必須等待某個特定的time-period才能送
+    出request，因此其delay會較pure ALOHA來的長。

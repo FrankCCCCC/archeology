@@ -1,0 +1,32 @@
+7. (10%)
+    Draw the max-heap tree after the following operations are performed
+    beginning with an empty heap.
+    (a) insert 33, 21, 58, 14,
+    (b) Delete-max,
+    (c) Insert 41, 32, 43, 59, 61,
+    (d) Delete-max.
+
+8. (10%)
+    Starting from a null tree, we want to construct a Binary Search Tree with
+    MINIMUM height according to the following steps. Draw the BST after each
+    step.
+    (a) Insert 10, 7, 20, 9, 15,
+    (b) Insert 25, 3, 14, 5, 6,
+    (c) Delete 5,
+    (d) Delete 7,
+    (e) Delete 10.
+    
+9. (14%)
+    A clock tree is a Binary tree in which each node ni is associated with a
+    delay, delay(ni). The path delay from a root to a node is defined as the
+    summation of delay of all nodes along the path. The skew is defined as
+    the difference between the longest path and the shortest path among all
+    root-to-leave (terminal node) paths.
+    Write a C (or C-like) recursive procedure skew(treenode *root,
+    int *longest, int *shortest) that compute the longest and shortest paths
+    of the tree. Let the tree node be defined as :
+    typedef struct node {
+      int delay;
+      struct node *lchild; /* Pointer to the left subtree */
+      struct node *rchild; /* Pointer to the right subtree */
+    }treenode;

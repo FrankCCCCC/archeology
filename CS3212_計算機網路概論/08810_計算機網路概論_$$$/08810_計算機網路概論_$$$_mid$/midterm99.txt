@@ -1,0 +1,74 @@
+﻿99 midterm
+1. State the major functions of the physical layer.(7%) the major functions of the
+   data link layer.(8%)
+
+2. Why has the PCM sampling time been set at 125 micro seconds?(7%)
+
+3. State two reasons why the Manchester encoding scheme is used in the Ethernet.(8%)
+
+4. Why the CRC error check is used in most communication systems?(5%) With the 
+   generator polynomial x+1, what is the CRC code for the message x+x+1?(10%) Give 
+   one example of damaged frame that is not detected by the CRC check.(5%)
+
+5. State the main difference of the go-back-n ARQ and the selective-repeat ARQ.(7%) 
+   Give one situation that is more suitable to use each of the above two ARQs.(8%)
+
+6. What is the optimal window size of a sliding window protocol.(5%) A 3000-km long
+   T1 trunk is used to transmit 64-byte frames using go-back-n protocol. If the 
+   propagation speed is 6 micro second/km, how many bits should the sequence numbers 
+   be in a frame?(10%)
+
+7. Explain why 1-persistent CSMA is used in Ethernet.(8%) Why there is the LCFS(Last
+   Come First Serve) phenomenon in the CSMA/CD protocol?(7%)
+
+8. Consider the delay of pure ALOHA versus slotted ALOHA at low load. Which one is 
+   less? Explain your answer.(10%)
+
+98 midterm
+1. State two reasons why the Manchester encoding scheme is used in the Ethernet.(5%) 
+   Enumerate at least five considerations in choosing an encoding scheme in the 
+   physical layer of a network. Briefly explain why.(10%)
+   (a) 參考98 midterm (2)
+
+2. 同99 midterm (5)
+
+3. A 3000-km long T1 trunk is used to transmit 64-byte frames using go-back-n protocol.
+   If the propagation speed is 6 micro-second/km, how many bits should the frame 
+   sequence numbers be?(10%)
+   參考98 midterm (6 b)
+
+4. 同99 midterm (7)
+
+5. What happens in a token bus if a station accepts the token and then crashes 
+   immediately? How does the protocol handle this case?(10%)
+
+6. Use the cycle model with alternating busy and idle periods to show by queueing 
+   analysis that the throughout S as a function of offered load G for slotted ALOHA
+   protocol is Ge.(20%)
+
+7. Show by stating the major steps in the spanning tree algorithm that the spanning 
+   tree for Fig. 14-10 is the one as shown in Fig. 14-11.(15%)
+
+96 midterm
+1.State at least five reasons to use optical fiber as transmission lines.(10%)
+
+2.同98 midterm (1)
+
+3.同98 midterm (3)
+
+4.同99 midterm (7)
+
+5.同99 midterm (5)
+
+6.同99 midterm (8)
+
+7.Show that the size of the receiving and sending windows of the selective repeat 
+  ARQ should not exceed (M+1)/2.assume the sequence number is 0,1,2,…,M.(10%)
+
+8.Why CRC error check is used in most communication systems?(5%) Why the Header 
+  Error Control with single bit correction capability is used in ATM physical 
+  layer.(5%)
+  a 同99 midterm (4a)
+       
+9.In your opinion, why characteristics of the ATM makes it one of the most important
+  technology in implementing future high-speed networks.(10%)
